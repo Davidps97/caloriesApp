@@ -1,10 +1,12 @@
 import React from "react";
-import { Slider } from "antd";
+import { Card, Row, Col } from "antd";
 import "./home.css";
+import Header from "../header/header";
 
 function Home() {
   return (
     <div className="container">
+      <Header />
       <div className="dynamic-stats-container">
         <div id="protein" className="stats-containers">
           <div className="dynamic-percent">100 %</div>
@@ -30,16 +32,29 @@ function Home() {
           <div className="gr-value">1000kcal</div>
         </div>
       </div>
-      <div className="insert-data-container" style={{ width: "70%" }}>
-        <div className="protein-data">
-          <Slider min={0} max={20} />
-        </div>
-        <div className="carbs-data">
-          <Slider min={0} max={20} />
-        </div>
-        <div className="fat-data">
-          <Slider min={0} max={20} />
-        </div>
+      <div className="meals-container">
+        <Row gutter={[16, 16]} justify="center">
+          <Col xs={24} sm={12} md={12} lg={12}>
+            <Card
+              title="Today Dish"
+              extra={<div className="dynamic-percent">Lentils</div>}
+              style={{ backgroundColor: "#fafafa" }}
+            >
+              <div className="meal-description">
+                <img
+                  alt="Meal 1"
+                  src="/images/lentils.jpg"
+                  className="meal-image"
+                  style={{ width: "30%", objectFit: "cover" }}
+                />
+                <p>
+                  Lentils are small, round legumes cultivated in various regions
+                  around the world.
+                </p>
+              </div>
+            </Card>
+          </Col>
+        </Row>
       </div>
     </div>
   );

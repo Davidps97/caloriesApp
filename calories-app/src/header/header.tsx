@@ -4,6 +4,7 @@ import { BsFillCalendar2DateFill, BsFillPersonFill } from "react-icons/bs";
 import { IoFastFood, IoStatsChart } from "react-icons/io5";
 import { ImHome } from "react-icons/im";
 import { Popover } from "antd";
+import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
 import CalendarAnt from "../pages/calendar/calendar";
 import "./header.css";
 
@@ -67,20 +68,19 @@ function Header() {
         </div>
       </div>
       <div className="header-menu-container">
-        <div className="home-item">
+        <Link to="/" className="home-item">
           <ImHome style={{ fontSize: "28px", color: "#636363" }} />
-        </div>
-        <div className="stat-item">
+        </Link>
+        <Link to="/stats" className="stat-item">
           <IoStatsChart style={{ fontSize: "28px", color: "#636363" }} />
-        </div>
-        <div className="food-item">
+        </Link>
+        <Link to="/recipes" className="food-item">
           <IoFastFood style={{ fontSize: "28px", color: "#636363" }} />
-        </div>
-        <div className="profile-item">
+        </Link>
+        <Link to="/profile" className="profile-item">
           <BsFillPersonFill style={{ fontSize: "28px", color: "#636363" }} />
-        </div>
+        </Link>
       </div>
-      
     </header>
   );
 }
